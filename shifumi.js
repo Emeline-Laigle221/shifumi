@@ -19,20 +19,24 @@ function combat(joueur){
     let aleatoire=Math.floor(Math.random()*3);
     let bot=tableau[aleatoire];
     console.log(bot);
-    let resultat= document.getElementsByClassName('resultat');
+    let resultat = document.getElementById('resultatMatch');
+    let choixJoueur= document.getElementById('choixJoueur');
+    let choixOrdi= document.getElementById('choixOrdi');
+    choixJoueur.textContent=joueur;
+    choixOrdi.textContent=bot;
     if(bot==joueur){
-        resultat[0].textContent="egalité"
+        resultat.textContent="Égalité"
     }
     else if(bot=="pierre" && joueur=="feuille"){
-        resultat[0].textContent="joueur gagne"
+        resultat.textContent= "Joueur gagne"
     }
     else if(bot=="feuille" && joueur=="ciseaux"){
-        resultat[0].textContent="joueur gagne"
+        resultat.textContent="Joueur gagne"
     }
     else if(bot=="ciseaux" && joueur=="pierre"){
-        resultat[0].textContent="joueur gagne"
+        resultat.textContent="Joueur gagne"
     }
     else{
-        resultat[0].textContent="joueur perd"
+        resultat.textContent="Joueur perd"
     }
 }
