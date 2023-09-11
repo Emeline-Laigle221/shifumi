@@ -1,4 +1,4 @@
-let pierre= document.getElementById('pierre');
+/*let pierre= document.getElementById('pierre');
 pierre.addEventListener('click',()=>{
     combat('pierre')
 });
@@ -11,8 +11,16 @@ feuille.addEventListener('click',()=>{
 let ciseaux= document.getElementById('ciseaux');
 ciseaux.addEventListener('click',()=>{
     combat('ciseaux')
-});
+});*/
 
+
+let boutons = document.getElementsByTagName("button");
+
+for (const bouton of boutons) {
+    bouton.addEventListener('click',()=>{
+        combat(bouton.id)
+    });
+}
 
 function combat(joueur){
     let tableau=['pierre','feuille','ciseaux'];
@@ -22,8 +30,8 @@ function combat(joueur){
     let resultat = document.getElementById('resultatMatch');
     let choixJoueur= document.getElementById('choixJoueur');
     let choixOrdi= document.getElementById('choixOrdi');
-    choixJoueur.textContent=joueur;
-    choixOrdi.textContent=bot;
+    choixJoueur.textContent="Joueur : "+joueur;
+    choixOrdi.textContent="Ordinateur : "+bot;
     if(bot==joueur){
         resultat.textContent="Égalité"
     }
